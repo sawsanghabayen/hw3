@@ -1,17 +1,18 @@
 
 var data = require("./data.json");
 
-console.log("All IDS:");
+
  function allTopingTypes(){
 
     var  x = "";
     for (let i=0; i<data[0].topping.length;i++) {
-        x += data[0].topping[i].type + "<br>";
+        x += data[0].topping[i].type + " ";
       }
     console.log("All Toping Types:"+x);
  }
+ allTopingTypes();
 
-
+ console.log("*******************************************");
  function allBatterTypes(){
 
     var myObj, i, j,x = "";
@@ -19,13 +20,16 @@ console.log("All IDS:");
         for (let j=0; j< data[i].batters.batter.length; j++) {
           
 
-        x += data[i].batters.batter[j].type + "<br>";
+        x += data[i].batters.batter[j].type + " ";
       }
     }
     console.log("All Batter Types:"+x);
  }
+ allBatterTypes();
+ console.log("*******************************************");
 
  function ppuAverage(){
+	 var sum=0;
 
     for (let i=0; i<data.length;i++) {
 
@@ -35,12 +39,13 @@ console.log("All IDS:");
     var avg=sum/data.length;
     console.log("The Ppu avg ="+avg);
  }
-
+   ppuAverage();
+console.log("*******************************************");
 
  function ppuSum(){
-    var i,x = "";
-    for (i in data) {
-       data[i].ppu
+    var sum = 0;
+    for (let i=0; i<data.length;i++) {
+      
 
         sum += data[i].ppu ;
       
@@ -48,8 +53,8 @@ console.log("All IDS:");
     console.log("The Ppu sum=",sum);
  }
 
-
-
+ppuSum();
+console.log("*******************************************");
 
 
 function allIDs(){
@@ -57,17 +62,19 @@ function allIDs(){
     var  x = "";
     for ( let i=0; i< data.length; i++ ) {
         
-        x += data[i].id + "<br>";
+        x += data[i].id + " ";
         for (let j=0; j< data[i].batters.batter.length;j++ ) {
           
 
-        x += data[i].batters.batter[j].id + "<br>";
+        x += data[i].batters.batter[j].id + " ";
       }
-      for (let k=0; k< data[i].topping.length;j++ ) {
+      for (let k=0; k< data[i].topping.length;k++ ) {
           
 
-        x += data[i].topping[j].id + "<br>";
+        x += data[i].topping[k].id + " ";
       }
     }
     console.log("All IDS:",x);
  }
+ allIDs();
+ console.log("*******************************************");
